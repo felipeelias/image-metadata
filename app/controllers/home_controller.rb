@@ -10,6 +10,10 @@ class HomeController < ApplicationController
   def ola
     @tempo = Time.now
     @array = Image.all
+    respond_to do |wants|
+      wants.html
+      wants.xml { render :xml => params.to_xml }
+    end
   end 
   
 end
