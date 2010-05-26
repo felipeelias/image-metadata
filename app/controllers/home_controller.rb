@@ -1,19 +1,8 @@
 class HomeController < ApplicationController
   
-  #get
+  #FIXME: Fazer isso depois
   def index
-    #render :text => "Hello"
-    redirect_to :action => :ola
+      @images = Image.all
   end
-  
-  #get
-  def ola
-    @tempo = Time.now
-    @array = Image.all
-    respond_to do |wants|
-      wants.html
-      wants.xml { render :xml => params.to_xml }
-    end
-  end 
   
 end
