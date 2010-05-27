@@ -5,5 +5,6 @@ Feature: Images
 
   Scenario: Findind images
     Given I am on the home page
-    
+    When I search for "people"
+    Then I should see only images with the tag "people"
     
