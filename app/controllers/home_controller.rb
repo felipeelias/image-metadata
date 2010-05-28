@@ -1,8 +1,5 @@
 class HomeController < ApplicationController
-  
-  #FIXME: Fazer isso depois
   def index
-      @images = Image.all
+    @images = Image.all
   end
-  
 end
