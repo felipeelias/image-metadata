@@ -4,7 +4,12 @@ Feature: Images
   I want find images quickly
 
   Scenario: Findind images
-    Given I am on the home page
-    When I search for "people"
-    Then I should see only images with the tag "people"
+    Given the following images
+      | image          | tags       |
+      | little_dog.png | animal dog |
+      | big_cat.png    | animal cat |
+    When I go to search page
+    And I search for "dog"
+    Then I should see images with the tag "dog"
+    And I should not see images with the tag "cat"
     
