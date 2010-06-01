@@ -8,8 +8,9 @@ Then /^I should see only images with the tag "(.+)"$/ do |searched|
 end
 
 Given /^the following images$/ do |table|
-  # table is a Cucumber::Ast::Table
-  pending # express the regexp above with the code you wish you had
+  table.hashes.each do |hash|
+    Image.create!(hash)
+  end
 end
 
 Then /^I should see images with the tag "([^\"]*)"$/ do |arg1|
