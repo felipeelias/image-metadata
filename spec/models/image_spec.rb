@@ -1,14 +1,10 @@
 require 'spec_helper'
 
 describe Image do
-  before(:each) do
-    @valid_attributes = {
-      :image => "value for image",
-      :tags => "value for tags"
-    }
-  end
-
-  it "should create a new instance given valid attributes" do
-    Image.create!(@valid_attributes)
+  context "with invalid attributes" do
+    it do
+      invalid_image = Factory.build(:image, :image => nil)
+      invalid_image.should_not be_valid
+    end    
   end
 end
