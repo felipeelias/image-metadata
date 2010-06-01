@@ -11,7 +11,7 @@ module NavigationHelpers
     when /the home\s?page/
       '/home'
     when /search page/
-      '/search'
+      '/home/search'
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
