@@ -9,7 +9,7 @@ end
 
 Given /^the following images$/ do |table|
   table.hashes.each do |hash|
-    Image.create!(hash)
+    Factory(:image, hash)
   end
 end
 
