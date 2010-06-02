@@ -4,6 +4,8 @@ class HomeController < ApplicationController
   end
   
   def search
-    @images = Image.all(:conditions => { :tags => "cat" })
+    if params[:search]
+      @images = Image.all(:conditions => { :tags => "cat" })
+    end
   end
 end

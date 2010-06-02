@@ -1,6 +1,8 @@
 require 'spec_helper'
 
 describe HomeController do
+  integrate_views
+  
   describe "GET 'search'" do
     it "should be successful" do
       get 'search'
@@ -17,6 +19,12 @@ describe HomeController do
       get 'search', :search => "cat"
       response.should be_success
       assigns[:images].should == [cat]
+    end
+    
+    it "returns nothing if the search is empty" do
+      get 'search'      
+      response.should have_text(/no search/)
+      assigns[:images].should be_nil
     end
   end
 end
