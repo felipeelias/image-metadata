@@ -28,5 +28,13 @@ describe HomeController do
       response.should have_text(/no search/)
       assigns[:images].should be_nil
     end
+
+    it "returns a message if finds nothing" do
+      Image.should_receive(:all).with(:conditions => {:tags => "invalid"}).and_return([])
+      
+      get 'search', :search => "invalid"
+      response.should have_text(/no itens found/)
+      assigns[:images].should be_empty
+    end
   end
 end
