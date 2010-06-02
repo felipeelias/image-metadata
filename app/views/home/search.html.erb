@@ -1,12 +1,18 @@
-<% form_tag 'search' do %>
+<% form_tag '/home/search', :method => :get do %>
   <%= label_tag "Search" %>
   <%= text_field_tag :search %>
   
-  <%= button_to "Find" %>
+  <%= submit_tag "Find" %>
 <% end %>
 
 <% if @images.nil? %>
   no search
 <% elsif @images.empty? %>
   no itens found
+<% else %>
+  <ul>
+    <li></li>
+  </ul>
 <% end %>
+
+<%= params[:search].inspect %>
