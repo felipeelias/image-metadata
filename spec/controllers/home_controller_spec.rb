@@ -12,7 +12,7 @@ describe HomeController do
       cat = Factory.stub(:image, :tags => "cat")
       dog = Factory.stub(:image, :tags => "dog")
 
-      Image.should_receive(:all).with(:conditions => {:tags => "cat"}).and_return([cat])
+      Image.should_receive(:find_by_tags).with("cat").and_return([cat])
 
       get 'search', :search => "cat"
       response.should be_success
@@ -30,7 +30,7 @@ describe HomeController do
     end
 
     it "returns a message if finds nothing" do
-      Image.should_receive(:all).with(:conditions => {:tags => "invalid"}).and_return([])
+      Image.should_receive(:find_by_tags).with("invalid").and_return([])
       
       get 'search', :search => "invalid"
       response.should have_text(/no itens found/)
