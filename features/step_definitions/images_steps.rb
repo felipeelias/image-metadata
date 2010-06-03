@@ -9,7 +9,7 @@ Given /^the following images$/ do |table|
   end
 end
 
-Then /^I should see images with the tag "([^\"]*)" and "([^\"]*)"$/ do |tag, src|
+Then /^I should see images with the tag "([^\"]*)"$/ do |tag|
   Then %Q{I should see "#{tag}" within "span.tag"}
 end
 

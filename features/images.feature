@@ -10,7 +10,7 @@ Feature: Images
       | big_cat.png    | cat  |
     When I go to search page
     And I search for "dog"
-    Then I should see images with the tag "dog" and "little_dog.png"
+    Then I should see images with the tag "dog"
     And I should not see images with the tag "cat"
     
   Scenario: Finding multiple images
@@ -21,6 +21,6 @@ Feature: Images
       | car.png        | car        |
     When I go to search page
     And I search for "animal"
-    Then I should see images with the tag "dog" and "little_dog.png"
-    Then I should see images with the tag "cat" and "big_cat.png"
+    Then I should see images with the tag "dog"
+    Then I should see images with the tag "cat"
     And I should not see images with the tag "car"
