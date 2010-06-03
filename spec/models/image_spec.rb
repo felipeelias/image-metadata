@@ -14,4 +14,15 @@ describe Image do
       invalid_image.should be_valid
     end    
   end
+  
+  context "searching" do
+    it "should find for one tag" do
+      cat = Factory(:image) # :tags => animal cat
+      dog = Factory(:image, :image => "dog.png", :tags => "animal dog")
+      egg = Factory(:image, :image => "egg.png", :tags => "egg")
+
+      search = Image.find_by_tags("egg")
+      search.should == egg
+    end
+  end
 end
