@@ -1,9 +1,4 @@
-<% form_tag '/home/search', :method => :get do %>
-  <%= label_tag "Search" %>
-  <%= text_field_tag :search %>
-  
-  <%= submit_tag "Find" %>
-<% end %>
+<%= render "search" %>
 
 <% if @images.nil? %>
   no search
@@ -14,5 +9,3 @@
     <li><img src="/images/little_dog.png"/><span class="tag"><%= "dog" %></span></li>
   </ul>
 <% end %>
-
-<%= params[:search].inspect %>
