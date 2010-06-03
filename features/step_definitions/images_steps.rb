@@ -3,20 +3,17 @@ When /^I search for "(.+)"$/ do |search|
   click_button "Find"
 end
 
-Then /^I should see only images with the tag "(.+)"$/ do |searched|
-  pending # express the regexp above with the code you wish you had
-end
-
 Given /^the following images$/ do |table|
   table.hashes.each do |hash|
     Factory(:image, hash)
   end
 end
 
-Then /^I should see images with the tag "([^\"]*)"$/ do |arg1|
-  pending # express the regexp above with the code you wish you had
+Then /^I should see images with the tag "([^\"]*)" and "([^\"]*)"$/ do |tag, src|
+  Then %Q{I should see "#{tag}" within "span.tag"}
+  find("li img").node.attr("src").should =~ Regexp.new("#{src}$")
 end
 
-Then /^I should not see images with the tag "([^\"]*)"$/ do |arg1|
-  pending # express the regexp above with the code you wish you had
+Then /^I should not see images with the tag "([^\"]*)"$/ do |tag|
+  Then %Q{I should not see "#{tag}" within "span.tag"}
 end
