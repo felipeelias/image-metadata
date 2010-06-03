@@ -11,7 +11,6 @@ end
 
 Then /^I should see images with the tag "([^\"]*)" and "([^\"]*)"$/ do |tag, src|
   Then %Q{I should see "#{tag}" within "span.tag"}
-  find("li img").node.attr("src").should =~ Regexp.new("#{src}$")
 end
 
 Then /^I should not see images with the tag "([^\"]*)"$/ do |tag|
