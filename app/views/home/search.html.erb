@@ -5,7 +5,12 @@
 <% elsif @images.empty? %>
   no itens found
 <% else %>
-  <ul>
-    <li><img src="/images/little_dog.png"/><span class="tag"><%= "dog" %></span></li>
-  </ul>
+<ul>
+  <% @images.each do |image| %>
+    <li>
+      <img src="<%=h image.image %>" />
+      <span class="tag"><%=h image.tags %></span>
+    </li>
+  <% end %>
+</ul>
 <% end %>
