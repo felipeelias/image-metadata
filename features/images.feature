@@ -13,13 +13,12 @@ Feature: Images
     Then I should see images with the tag "dog" and "little_dog.png"
     And I should not see images with the tag "cat"
     
-  @wip
   Scenario: Finding multiple images
     Given the following images
-      | image          | tags           |
-      | little_dog.png | animal dog     |
-      | big_cat.png    | animal cat     |
-      | car.png        | not_animal car |
+      | image          | tags       |
+      | little_dog.png | animal dog |
+      | big_cat.png    | animal cat |
+      | car.png        | car        |
     When I go to search page
     And I search for "animal"
     Then I should see images with the tag "dog" and "little_dog.png"
