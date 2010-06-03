@@ -10,6 +10,6 @@ Feature: Images
       | big_cat.png    | cat  |
     When I go to search page
     And I search for "dog"
-    Then I should see images with the tag "dog"
+    Then I should see images with the tag "dog" and "little_dog.png"
     And I should not see images with the tag "cat"
     
