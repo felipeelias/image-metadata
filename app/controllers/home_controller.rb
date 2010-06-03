@@ -1,4 +1,6 @@
 class HomeController < ApplicationController
+  
+  # TODO: trazer imagens que ainda nao foram definidas com tags
   def index
     @images = Image.all
   end
