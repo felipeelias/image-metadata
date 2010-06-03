@@ -4,6 +4,6 @@ class HomeController < ApplicationController
   end
   
   def search
-    @images = Image.find_all_by_tags(params[:search]) if params[:search]
+    @images = Image.tagged_with(params[:search]) if params[:search]
   end
 end
