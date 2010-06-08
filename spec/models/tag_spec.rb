@@ -1,13 +1,8 @@
 require 'spec_helper'
 
 describe Tag do
-  before(:each) do
-    @valid_attributes = {
-      :tag => "value for tag"
-    }
-  end
-
-  it "should create a new instance given valid attributes" do
-    Tag.create!(@valid_attributes)
+  it "with valid attributes" do
+    tag = Factory(:tag)
+    tag.should be_valid
   end
 end
