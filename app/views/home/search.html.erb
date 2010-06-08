@@ -9,7 +9,11 @@
   <% @images.each do |image| %>
     <li>
       <img src="<%=h image.image %>" />
-      <span class="tag"><%=h image.tags %></span>
+      <% if !image.tags.nil? %>
+        <% image.tags.each do |tag| %>
+          <span class="tag"><%=h tag.tag %></span>
+        <% end %>
+      <% end %>
     </li>
   <% end %>
 </ul>
