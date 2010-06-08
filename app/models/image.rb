@@ -5,6 +5,6 @@ class Image < ActiveRecord::Base
   has_many :tags, :through => :taggings
   
   def self.tagged_with(tag)
-    scoped(:conditions => ["tags like ?", "%#{tag}%"])
+    scoped(:joins => :tags, :conditions => ["tags.tag like ?", "%#{tag}%"])
   end
 end
