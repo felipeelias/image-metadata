@@ -17,17 +17,17 @@ describe Image do
   
   context "searching" do
     it "should find for one tag" do
-      cat = Factory(:image) # :tags => animal cat
-      egg = Factory(:image, :image => "egg.png", :tags => "egg")
+      cat = Factory(:cat_image)
+      egg = Factory(:egg_image)
 
       search = Image.tagged_with("egg")
       search.should == [egg]
     end
 
     it "should find for multiple tags" do
-      cat = Factory(:image) # :tags => animal cat
-      dog = Factory(:image, :image => "dog.png", :tags => "animal dog")
-      egg = Factory(:image, :image => "egg.png", :tags => "egg")
+      cat = Factory(:cat_image)
+      dog = Factory(:dog_image)
+      egg = Factory(:egg_image)
 
       search = Image.tagged_with("animal")
       search.should == [cat, dog]

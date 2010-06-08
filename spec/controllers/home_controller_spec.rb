@@ -9,8 +9,8 @@ describe HomeController do
   
   describe "GET a valid search" do
     it "should search for 'cat'" do
-      cat = Factory.stub(:image, :tags => "cat")
-      dog = Factory.stub(:image, :tags => "dog")
+      cat = Factory.stub(:cat_image)
+      dog = Factory.stub(:dog_image)
 
       Image.should_receive(:tagged_with).with("cat").and_return([cat])
 
