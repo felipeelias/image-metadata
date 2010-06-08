@@ -5,6 +5,9 @@ end
 
 Given /^the following images$/ do |table|
   table.hashes.each do |hash|
+    hash["tags"] = hash["tags"].split(/\s/).map do |tag|
+      Factory(:tag, :tag => tag)
+    end
     Factory(:image, hash)
   end
 end
