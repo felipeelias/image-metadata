@@ -17,14 +17,14 @@ MetricFu::Configuration.run do |config|
                     } #this needs to be set to "text"
   config.churn    = { :start_date => "1 year ago", :minimum_churn_count => 10 }
   config.rcov     = { :environment => 'test',
-                      :test_files => ['spec/**/*_spec.rb'],
+                      :test_files => ['test/**/*_test.rb', 'spec/**/*_spec.rb'],
                       :rcov_opts => ["--sort coverage", 
                                      "--no-html", 
                                      "--text-coverage",
                                      "--no-color",
                                      "--profile",
                                      "--rails",
-                                     "--include spec",
+                                     "-Itest:spec",
                                      "--exclude /gems/,/Library/,spec"]
                     }
   config.graph_engine = :bluff
