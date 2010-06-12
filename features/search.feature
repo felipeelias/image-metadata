@@ -1,4 +1,4 @@
-Feature: Images
+Feature: Searching images
   In order to spent less time finding images
   As a user
   I want find images quickly
