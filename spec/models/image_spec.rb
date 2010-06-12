@@ -33,4 +33,14 @@ describe Image do
       search.should == [cat, dog]
     end
   end
+  
+  context "detecting tagged images" do
+    it "should find images with no tags" do
+      cat = Factory(:cat_image)
+      dog = Factory(:dog_image, :tags => [])
+    
+      search = Image.not_tagged
+      search.should == [dog]
+    end
+  end
 end
