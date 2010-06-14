@@ -2,7 +2,7 @@ class HomeController < ApplicationController
   
   # TODO: trazer imagens que ainda nao foram definidas com tags
   def index
-    @images = Image.all
+    @untagged_images = Image.not_tagged
   end
   
   # TODO: testar se o parametro é "" ou " " (vazio)
