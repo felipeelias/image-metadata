@@ -50,7 +50,7 @@ describe HomeController do
 
       get :index
       
-      response.should have_text(/2 images with no tag/)
+      response.should have_tag("span.untagged", :text => "2")
       assigns[:untagged_images].should == [dog, egg]
     end
   end
