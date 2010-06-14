@@ -37,4 +37,21 @@ describe HomeController do
       assigns[:images].should be_empty
     end
   end
+  
+  describe "show images with no tags" do
+    integrate_views
+    
+    it "should display a count of untagged images" do
+      cat = Factory.stub(:cat_image)
+      dog = Factory.stub(:dog_image, :tags => [])
+      egg = Factory.stub(:dog_image, :tags => [])
+      
+      Image.should_receive(:not_tagged).and_return([dog, egg])
+
+      get :index
+      
+      response.should have_tag("span.untagged", :text => "2")
+      assigns[:untagged_images].should == [dog, egg]
+    end
+  end
 end
