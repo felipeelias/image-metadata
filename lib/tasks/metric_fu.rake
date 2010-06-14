@@ -3,7 +3,7 @@ require 'metric_fu'
 MetricFu::Configuration.run do |config|
   config.metrics  = [:churn, :saikuro, :stats, :flog, :flay, :reek, :roodi, :rcov]
   config.graphs   = [:flog, :flay, :reek, :roodi, :rcov]
-  config.flay     = { :dirs_to_flay => ['app', 'lib'], :minimum_score => 100  } 
+  config.flay     = { :dirs_to_flay => ['app', 'lib', 'spec'], :minimum_score => 10 } 
   config.flog     = { :dirs_to_flog => ['app', 'lib']  }
   config.reek     = { :dirs_to_reek => ['app', 'lib']  }
   config.roodi    = { :dirs_to_roodi => ['app', 'lib'] }
