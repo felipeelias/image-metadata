@@ -2,12 +2,21 @@ require 'spec_helper'
 
 describe ImagesController do
   describe "editing a image" do
-    it "should get #edit action" do
-      image = Factory(:image)
+    before :all do
+      @image = Factory(:image)
+    end
+    
+    it "should get #edit action" do      
+      get :edit, :id => @image.to_param
       
-      get :edit, :id => image.id
+      assigns[:image].should == @image
+      response.should be_success
+    end
+    
+    it "should #update" do
+      get :update, :id => @image.to_param, :image => @image
       
-      assigns[:image].should == image
+      assigns[:image].should == @image
       response.should be_success
     end
   end

@@ -4,6 +4,7 @@ class ImagesController < ApplicationController
   end
 
   def update
+    @image = Image.find(params[:id])
   end
 
 end
