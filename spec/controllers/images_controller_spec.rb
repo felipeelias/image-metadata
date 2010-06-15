@@ -1,23 +1,13 @@
 require 'spec_helper'
 
 describe ImagesController do
-
-  #Delete these examples and add some real ones
-  it "should use ImagesController" do
-    controller.should be_an_instance_of(ImagesController)
-  end
-
-
-  describe "GET 'edit'" do
-    it "should be successful" do
-      get 'edit'
-      response.should be_success
-    end
-  end
-
-  describe "GET 'update'" do
-    it "should be successful" do
-      get 'update'
+  describe "editing a image" do
+    it "should get #edit action" do
+      image = Factory(:image)
+      
+      get :edit, :id => image.id
+      
+      assigns[:image].should == image
       response.should be_success
     end
   end
