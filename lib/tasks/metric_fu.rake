@@ -1,9 +1,9 @@
 require 'metric_fu'
 
 MetricFu::Configuration.run do |config|
-  config.metrics  = [:churn, :saikuro, :stats, :flog, :flay, :reek, :roodi, :rcov]
-  config.graphs   = [:flog, :flay, :reek, :roodi, :rcov]
-  config.flay     = { :dirs_to_flay => ['app', 'lib', 'spec'], :minimum_score => 10 } 
+  config.metrics  = [:churn, :saikuro, :stats, :flog, :flay, :reek, :roodi, :rcov, :rails_best_practices]
+  config.graphs   = [:flog, :flay, :reek, :roodi, :rcov, :stats, :rails_best_practices]
+  config.flay     = { :dirs_to_flay => ['app', 'lib', 'spec'], :minimum_score => 10, :filetypes => ['rb'] } 
   config.flog     = { :dirs_to_flog => ['app', 'lib']  }
   config.reek     = { :dirs_to_reek => ['app', 'lib']  }
   config.roodi    = { :dirs_to_roodi => ['app', 'lib'] }
@@ -14,7 +14,7 @@ MetricFu::Configuration.run do |config|
                       :warn_cyclo => "5",
                       :error_cyclo => "7",
                       :formater => "text"
-                    } #this needs to be set to "text"
+                    }
   config.churn    = { :start_date => "1 year ago", :minimum_churn_count => 10 }
   config.rcov     = { :environment => 'test',
                       :test_files => ['test/**/*_test.rb', 'spec/**/*_spec.rb'],
@@ -25,7 +25,8 @@ MetricFu::Configuration.run do |config|
                                      "--profile",
                                      "--rails",
                                      "-Itest:spec",
-                                     "--exclude /gems/,/Library/,spec"]
+                                     "--exclude /gems/,/Library/,spec"],
+                       :external => nil
                     }
   config.graph_engine = :bluff
 end
