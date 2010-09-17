@@ -9,6 +9,9 @@ class ImagesController < ApplicationController
 
   def update
     @image = Image.find(params[:id])
+    @image.update_attributes(params[:image])
+    
+    redirect_to :action => "index"
   end
 
 end

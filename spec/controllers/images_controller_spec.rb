@@ -22,10 +22,10 @@ describe ImagesController do
     end
     
     it "should #update" do
-      get :update, :id => @image.to_param, :image => @image
-      
+      get :update, :id => @image.to_param, :image => { :tag_names => @image.tag_names }
+
       assigns[:image].should == @image
-      response.should be_success
+      response.should be_redirect
     end
   end
 end

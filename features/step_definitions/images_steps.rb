@@ -23,3 +23,9 @@ end
 Then /^I should see "([^"]*)" images with no tags$/ do |number|
   Then %Q{I should see "#{number}" within "span.untagged"}
 end
+
+Then /^the "([^"]*)" image should have tags "([^"]*)"$/ do |image, tags|
+  with_scope("div.image span.tags") do
+    page.should have_content(tags)
+  end
+end

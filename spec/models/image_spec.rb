@@ -5,6 +5,13 @@ describe Image do
     Factory(:cat_image).tag_names.should == "animal cat"
   end
   
+  it "should update tag names" do
+    image = Factory(:cat_image)
+    image.tag_names = "crazy animal cat"
+    image.save
+    image.tag_names.should == "animal cat crazy"
+  end
+  
   context "with invalid attributes" do
     it do
       invalid_image = Factory.build(:image, :image => nil)

@@ -1,3 +1,6 @@
 <% @images.each do |image| %>
-  <a href="<%= edit_image_path(image) %>"><%= image.image %></div>
+<div class="image">
+  <a href="<%= edit_image_path(image) %>"><%= image.image %></a>
+  <span class="tags"><%= image.tag_names %></span>  
+</div>
 <% end %>  
