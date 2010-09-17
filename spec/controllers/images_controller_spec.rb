@@ -1,8 +1,16 @@
 require 'spec_helper'
 
 describe ImagesController do
+  it "should GET /images" do
+    @image = Factory(:image)
+    get :index
+    
+    assigns[:images].should == [@image]
+    response.should be_success
+  end
+  
   describe "editing a image" do
-    before :all do
+    before :each do
       @image = Factory(:image)
     end
     
