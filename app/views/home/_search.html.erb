@@ -1,6 +1,6 @@
 <% form_tag '/home/search', :method => :get do %>
 
-  <%= text_field_tag :search, '', :placeholder => "Type some tags and press enter" %>
-  
+  <%= text_field_tag :search, params[:search], :placeholder => "Type some tags and press enter" %>
+
   <%= submit_tag "Find" %>
 <% end %>

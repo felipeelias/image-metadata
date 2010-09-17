@@ -1,6 +1,3 @@
-<% @images.each do |image| %>
-<div class="image">
-  <a href="<%= edit_image_path(image) %>"><%= image.image %></a>
-  <span class="tags"><%= image.tag_names %></span>  
-</div>
-<% end %>  
+<h2>Click to edit</h2>
+
+<%= render :partial => "image", :collection => @images %>

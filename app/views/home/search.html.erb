@@ -1,20 +1,11 @@
-<%= render "search" %>
+<div id="sub_search">
+  <%= render "search" %>
+</div>
 
 <% if @images.nil? %>
   no search
 <% elsif @images.empty? %>
   no itens found
 <% else %>
-<ul>
-  <% @images.each do |image| %>
-    <li>
-      <img src="<%=h image.image %>" />
-      <% if !image.tags.nil? %>
-        <% image.tags.each do |tag| %>
-          <span class="tag"><%=h tag.tag %></span>
-        <% end %>
-      <% end %>
-    </li>
-  <% end %>
-</ul>
+  <%= render :partial => "images/image", :collection => @images %>
 <% end %>

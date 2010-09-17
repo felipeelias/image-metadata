@@ -25,6 +25,7 @@ p {
   padding: 20px;
   width: 960px;
   background-color: #FFF;
+  overflow:hidden;
 }
 
 #main_search {
@@ -40,4 +41,27 @@ p {
 
 #main_search input[type="submit"] {
   display: none;
+}
+
+#sub_search {
+  margin-bottom: 10px;
+}
+
+#sub_search input[type="text"] {
+  width: 200px;
+}
+
+.image {
+  float:left;
+  width: 120px;
+  height: 60px;
+}
+
+.image a {
+  font-size: 75%;
+}
+
+span.tags {
+  display: block;
+  margin:5px;
 }
