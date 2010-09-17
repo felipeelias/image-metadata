@@ -4,11 +4,11 @@ class ImagesController < ApplicationController
   end
   
   def edit
-    @image = Image.find_by_image(params[:id])
+    @image = Image.find(params[:id])
   end
 
   def update
-    @image = Image.find_by_image(params[:id])
+    @image = Image.find(params[:id])
   end
 
 end
