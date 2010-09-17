@@ -3,12 +3,14 @@ Feature: Add tags to images
   As a user
   I want relate tags to images
 
-  Scenario: Showing images with no tags
-    Given the following images 
+  Background:
+    Given the following images
       | image          | tags       |
       | little_dog.png | animal dog |
       | big_cat.png    |            |
       | car.png        |            |
-    When I go to "home page"
-    Then I should see "2" images with no tags
-    
+
+  Scenario: Editing images
+    Given I am on the images page
+    Then show me the page
+    When I follow "little_dog.png"

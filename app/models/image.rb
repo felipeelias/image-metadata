@@ -7,4 +7,7 @@ class Image < ActiveRecord::Base
   named_scope :not_tagged, :include => :tags, :conditions => { "tags.tag" => nil }  
   named_scope :tagged_with, lambda { |tag| { :joins => :tags, :conditions => ["tags.tag like ?", "%#{tag}%"] } }
 
+  def to_param
+    image
+  end
 end

@@ -1,6 +1,10 @@
 require 'spec_helper'
 
 describe Image do
+  it "should convert to param" do
+    Factory.build(:image, :image => "image.png").to_param.should == "image.png"
+  end
+  
   context "with invalid attributes" do
     it do
       invalid_image = Factory.build(:image, :image => nil)

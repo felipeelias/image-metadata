@@ -10,7 +10,8 @@ module NavigationHelpers
 
     when /search page|home page/
       home_path
-
+    when /images page/
+      images_path
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
