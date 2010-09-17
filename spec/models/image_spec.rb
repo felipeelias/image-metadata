@@ -1,6 +1,10 @@
 require 'spec_helper'
 
 describe Image do
+  it "should have tags" do
+    Factory(:cat_image).tag_names.should == "animal cat"
+  end
+  
   context "with invalid attributes" do
     it do
       invalid_image = Factory.build(:image, :image => nil)

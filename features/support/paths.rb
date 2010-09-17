@@ -12,6 +12,8 @@ module NavigationHelpers
       home_path
     when /images page/
       images_path
+    when /edit image page/
+      edit_image_path
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

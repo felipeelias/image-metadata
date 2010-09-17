@@ -10,7 +10,8 @@ Feature: Add tags to images
       | big_cat.png    |            |
       | car.png        |            |
 
-  Scenario: Editing images
+  Scenario: Showing edit page
     Given I am on the images page
-    Then show me the page
     When I follow "little_dog.png"
+    Then I should see "little_dog.png"
+    And the "image_tag_names" field should contain "animal dog"
