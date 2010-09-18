@@ -7,3 +7,4 @@ db/*.backup
 db/schema.rb
 .project
 coverage
+.bundle

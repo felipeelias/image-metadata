@@ -16,6 +16,9 @@ Spork.prefork do
   require 'capybara/session'
   require 'cucumber/rails/capybara_javascript_emulation'
   
+  require 'factory_girl'
+  require 'spec/factories'
+  
   Capybara.default_selector = :css
 
   ActionController::Base.allow_rescue = false
