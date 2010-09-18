@@ -19,4 +19,5 @@ group :cucumber do
   gem 'cucumber-rails',   '0.3.2'
   gem 'database_cleaner', '0.5.2'
   gem 'capybara',         '0.3.8'
+  gem 'launchy'
 end
