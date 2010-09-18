@@ -8,7 +8,11 @@ class Image < ActiveRecord::Base
   has_many :tags, :through => :taggings
 
   named_scope :not_tagged, :include => :tags, :conditions => { "tags.tag" => nil }  
-  named_scope :tagged_with, lambda { |tag| { :joins => :tags, :conditions => ["tags.tag like ?", "%#{tag}%"] } }
+  named_scope :with_tags, lambda { |tag| { :joins => :tags, :conditions => ["tags.tag like ?", "%#{tag}%"] } }
+  
+  def self.tagged_with(tag)
+    with_tags(tag).uniq
+  end
   
   def tag_names
     tags.map(&:tag).join(" ")

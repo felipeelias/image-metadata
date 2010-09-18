@@ -43,6 +43,15 @@ describe Image do
       search = Image.tagged_with("animal")
       search.should == [cat, dog]
     end
+    
+    it "should not duplicate if the search exists in multiple tags" do
+      cat = Factory(:cat_image)
+      dog = Factory(:dog_image)
+      egg = Factory(:egg_image)
+
+      search = Image.tagged_with("a")
+      search.should == [cat, dog]
+    end
   end
   
   context "detecting tagged images" do
