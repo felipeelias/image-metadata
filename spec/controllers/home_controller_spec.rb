@@ -25,7 +25,7 @@ describe HomeController do
     
     it "returns a message if the search is empty" do
       get 'search'      
-      response.should have_text(/no search/)
+      response.should have_text(/Try searching for something above/)
       assigns[:images].should be_nil
     end
 
