@@ -8,3 +8,4 @@ db/schema.rb
 .project
 coverage
 .bundle
+public/stylesheets/all.css
