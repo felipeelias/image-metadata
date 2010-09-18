@@ -1,11 +1,23 @@
 <div id="sub_search">
-  <%= render "search" %>
+  Search: <%= render "search" %>
 </div>
 
 <% if @images.nil? %>
-  no search
+  Try searching for something above.
 <% elsif @images.empty? %>
-  no itens found
+  Sorry, no itens found :( Try searching again.
 <% else %>
   <%= render :partial => "images/image", :collection => @images %>
 <% end %>
+
+<div class="clear"></div>
+
+<%= will_paginate @images %>
+
+<div class="clear"/>
+
+<small><%= render 'images/untagged' %></small>
+
+<br/>
+
+<%= home_page_link %>

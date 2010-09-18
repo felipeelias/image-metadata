@@ -1,7 +1,14 @@
-<h2>Click to edit</h2>
+<h1>All images</h1>
+<small>Click on tag names to edit</small>
+
+<div class="clear"></div>
 
 <%= render :partial => "image", :collection => @images %>
 
 <div class="clear"></div>
 
 <%= will_paginate @images %>
+
+<br/>
+
+<%= home_page_link %>

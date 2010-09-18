@@ -1,3 +1,5 @@
-# Methods added to this helper will be available to all templates in the application.
 module ApplicationHelper
+  def home_page_link
+    link_to "Back to search page", home_path
+  end
 end

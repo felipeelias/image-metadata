@@ -55,10 +55,15 @@ p {
   width: 200px;
 }
 
+.untagged_info {
+  margin-top: 15px;
+}
+
 .image {
-  float:left;
-  width: 120px;
+  float: left;
   height: 60px;
+  margin: 10px 10px 10px 0px;
+  width: 110px;
 }
 
 .image a {
@@ -67,6 +72,6 @@ p {
 
 span.tags {
   display: block;
-  margin:5px;
+  margin: 5px 0;
   font-size: 75%;
 }

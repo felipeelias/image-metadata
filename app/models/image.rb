@@ -1,6 +1,6 @@
 class Image < ActiveRecord::Base
   cattr_reader :per_page
-  @@per_page = 24
+  @@per_page = 32
   
   validates_presence_of :image
   
