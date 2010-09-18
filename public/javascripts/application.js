@@ -1,2 +1,8 @@
-// Place your application-specific JavaScript functions and classes here
-// This file is automatically included by javascript_include_tag :defaults
+$(function() {
+  $("span.tags").each(function() {
+    $(this).editable($(this).attr('data-url'), {
+      method: "PUT",
+      name: 'image[tag_names]'
+    });
+  });
+});

@@ -11,7 +11,11 @@ class ImagesController < ApplicationController
     @image = Image.find(params[:id])
     @image.update_attributes(params[:image])
     
-    redirect_to :action => "index"
+    if request.xhr?
+      render :text => @image.tag_names
+    else
+      redirect_to :action => "index"
+    end
   end
 
 end
