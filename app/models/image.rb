@@ -1,4 +1,7 @@
 class Image < ActiveRecord::Base
+  cattr_reader :per_page
+  @@per_page = 24
+  
   validates_presence_of :image
   
   has_many :taggings

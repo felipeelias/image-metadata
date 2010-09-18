@@ -1,6 +1,6 @@
 class ImagesController < ApplicationController
   def index
-    @images = Image.all(:include => :tags)
+    @images = Image.paginate(:page => params[:page], :include => :tags)
   end
   
   def edit

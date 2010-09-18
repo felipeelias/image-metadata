@@ -1,3 +1,7 @@
 <h2>Click to edit</h2>
 
 <%= render :partial => "image", :collection => @images %>
+
+<div class="clear"></div>
+
+<%= will_paginate @images %>

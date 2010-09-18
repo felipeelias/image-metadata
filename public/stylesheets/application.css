@@ -19,6 +19,10 @@ p {
   margin: 15px 0;
 }
 
+.clear {
+  clear:both;
+}
+
 #main {
   margin: 10px auto;
   border: 1px solid #CCC;

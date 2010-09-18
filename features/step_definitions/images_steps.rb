@@ -13,11 +13,11 @@ Given /^the following images$/ do |table|
 end
 
 Then /^I should see images with the tag "([^\"]*)"$/ do |tag|
-  Then %Q{I should see "#{tag}" within "span.tag"}
+  Then %Q{I should see "#{tag}" within "span.tags"}
 end
 
 Then /^I should not see images with the tag "([^\"]*)"$/ do |tag|
-  Then %Q{I should not see "#{tag}" within "span.tag"}
+  Then %Q{I should not see "#{tag}" within "span.tags"}
 end
 
 Then /^I should see "([^"]*)" images with no tags$/ do |number|
