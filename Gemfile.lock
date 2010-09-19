@@ -12,6 +12,7 @@ GEM
     activeresource (2.3.8)
       activesupport (= 2.3.8)
     activesupport (2.3.8)
+    acts-as-taggable-on (2.0.0.rc1)
     arrayfields (4.7.4)
     builder (2.1.2)
     capybara (0.3.8)
@@ -126,6 +127,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts-as-taggable-on (= 2.0.0.rc1)
   capybara (= 0.3.8)
   cucumber-rails (= 0.3.2)
   database_cleaner (= 0.5.2)

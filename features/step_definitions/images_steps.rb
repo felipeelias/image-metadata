@@ -5,9 +5,9 @@ end
 
 Given /^the following images$/ do |table|
   table.hashes.each do |hash|
-    hash["tags"] = hash["tags"].split(/\s/).map do |tag|
-      Factory(:tag, :tag => tag)
-    end
+    # hash["tags"] = hash["tags"].split(/\s/).map do |tag|
+    #   Tag.find_or_create_by_name(:name => tag)
+    # end
     Factory(:image, hash)
   end
 end

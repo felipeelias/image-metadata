@@ -2,14 +2,14 @@ require 'spec_helper'
 
 describe Image do
   it "should have tags" do
-    Factory(:cat_image).tag_names.should == "animal cat"
+    Factory(:cat_image).tag_list.should == ["animal", "cat"]
   end
   
   it "should update tag names" do
     image = Factory(:cat_image)
-    image.tag_names = "crazy animal cat"
+    image.tag_list = "crazy, animal, cat"
     image.save
-    image.tag_names.should == "animal cat crazy"
+    image.tag_list.sort.should == ["animal", "cat", "crazy"]
   end
   
   context "with invalid attributes" do
@@ -43,21 +43,12 @@ describe Image do
       search = Image.tagged_with("animal")
       search.should == [cat, dog]
     end
-    
-    it "should not duplicate if the search exists in multiple tags" do
-      cat = Factory(:cat_image)
-      dog = Factory(:dog_image)
-      egg = Factory(:egg_image)
-
-      search = Image.tagged_with("a")
-      search.should == [cat, dog]
-    end
   end
   
   context "detecting tagged images" do
     it "should find images with no tags" do
       cat = Factory(:cat_image)
-      dog = Factory(:dog_image, :tags => [])
+      dog = Factory(:dog_image, :tag_list => nil)
     
       search = Image.not_tagged
       search.should == [dog]

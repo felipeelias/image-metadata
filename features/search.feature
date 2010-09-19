@@ -5,9 +5,9 @@ Feature: Searching images
 
   Scenario: Finding one image
     Given the following images
-      | image          | tags |
-      | little_dog.png | dog  |
-      | big_cat.png    | cat  |
+      | image          | tag_list |
+      | little_dog.png | dog      |
+      | big_cat.png    | cat      |
     When I go to search page
     And I search for "dog"
     Then I should see images with the tag "dog"
@@ -15,10 +15,10 @@ Feature: Searching images
     
   Scenario: Finding multiple images
     Given the following images
-      | image          | tags       |
-      | little_dog.png | animal dog |
-      | big_cat.png    | animal cat |
-      | car.png        | car        |
+      | image          | tag_list    |
+      | little_dog.png | animal, dog |
+      | big_cat.png    | animal, cat |
+      | car.png        | car         |
     When I go to search page
     And I search for "animal"
     Then I should see images with the tag "dog"

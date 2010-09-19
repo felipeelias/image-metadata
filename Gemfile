@@ -2,6 +2,7 @@ source :gemcutter
 
 gem "rails", "2.3.8"
 gem "will_paginate", "2.3.15"
+gem "acts-as-taggable-on", "2.0.0.rc1"
 
 group :development do
   gem "sqlite3-ruby", "1.3.1", :require => "sqlite3"
