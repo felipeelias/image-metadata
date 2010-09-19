@@ -12,7 +12,7 @@ class ImagesController < ApplicationController
     @image.update_attributes(params[:image])
     
     if request.xhr?
-      render :text => @image.tag_names
+      render :text => @image.tag_list
     else
       redirect_to :action => "index"
     end
