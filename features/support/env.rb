@@ -20,6 +20,8 @@ Spork.prefork do
   require 'spec/factories'
   
   Capybara.default_selector = :css
+  
+  Capybara.javascript_driver = :culerity
 
   ActionController::Base.allow_rescue = false
 
