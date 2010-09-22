@@ -21,7 +21,6 @@ platforms :ruby_18 do
     gem 'database_cleaner', '0.5.2'
     gem 'capybara',         '0.3.8'
     gem 'launchy'
-    gem 'culerity'
   end  
 end
 
