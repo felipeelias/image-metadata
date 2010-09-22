@@ -14,6 +14,7 @@ GEM
     activesupport (2.3.8)
     acts-as-taggable-on (2.0.0.rc1)
     arrayfields (4.7.4)
+    awesome_print (0.2.1)
     bouncy-castle-java (1.5.0145.2)
     builder (2.1.2)
     capybara (0.3.8)
@@ -134,6 +135,7 @@ PLATFORMS
 
 DEPENDENCIES
   acts-as-taggable-on (= 2.0.0.rc1)
+  awesome_print
   bouncy-castle-java
   capybara (= 0.3.8)
   celerity

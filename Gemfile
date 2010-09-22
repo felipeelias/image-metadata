@@ -10,6 +10,7 @@ platforms :ruby_18 do
     gem "metric_fu",    "1.5.1"
     gem 'hirb'
     gem 'wirble'
+    gem 'awesome_print', :require => "ap"
   end
 
   group :test do
