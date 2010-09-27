@@ -8,14 +8,10 @@ describe Tag do
   end
 
   it "should return all tags if no search was passed" do
-    Tag.starting_with("").should == [@tag1, @tag2, @not_tag]
-  end
-  
-  it "should return all tags if a blank search was passed" do
-    Tag.starting_with(" ").should == [@tag1, @tag2, @not_tag]
+    Tag.named_like("").should == [@tag1, @tag2, @not_tag]
   end
   
   it "should find tags starting with a" do
-    Tag.starting_with("a").should == [@tag1, @tag2]
+    Tag.named_like("a").should == [@tag1, @tag2]
   end
 end
