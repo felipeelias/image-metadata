@@ -7,8 +7,6 @@ Feature: Add tags to images
     Given the following images
       | image          | tag_list    |
       | little_dog.png | animal, dog |
-      | big_cat.png    |             |
-      | car.png        |             |
 
   Scenario: Showing edit page
     Given I am on the images page
@@ -23,7 +21,6 @@ Feature: Add tags to images
     And I press "Save changes"
     Then the "little_dog.png" image should have tags "animal, dog, crazy"
   
-  @wip
   @javascript
   Scenario: Adding tags with edit in place
     Given I am on the images page
