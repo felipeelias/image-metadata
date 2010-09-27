@@ -29,3 +29,9 @@ Then /^the "([^"]*)" image should have tags "([^"]*)"$/ do |image, tags|
     page.should have_content(tags)
   end
 end
+
+When /^I edit tags from "([^"]*)" to "([^"]*)"$/ do |actual_tags, edited_tags|
+  find("span.tags", :text => actual_tags).click
+  fill_in("image[tag_list]", :with => edited_tags)
+  find("input", :name => "image[tag_list]").trigger('blur')
+end

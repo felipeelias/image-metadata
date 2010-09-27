@@ -22,3 +22,11 @@ Feature: Add tags to images
     And I fill in "image_tag_list" with "crazy, animal, dog"
     And I press "Save changes"
     Then the "little_dog.png" image should have tags "animal, dog, crazy"
+  
+  @wip
+  @javascript
+  Scenario: Adding tags with edit in place
+    Given I am on the images page
+    When I edit tags from "animal, dog" to "animal, dog, crazy"
+    And I should see "animal, dog, crazy" within "span.tags"
+    
