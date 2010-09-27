@@ -42,16 +42,9 @@ describe HomeController do
     integrate_views
     
     it "should display a count of untagged images" do
-      cat = Factory.stub(:cat_image)
-      dog = Factory.stub(:dog_image, :tags => [])
-      egg = Factory.stub(:dog_image, :tags => [])
-      
-      Image.should_receive(:not_tagged).and_return([dog, egg])
-
+      Image.should_receive(:count).and_return(2)
       get :index
-      
-      response.should have_tag("span.untagged", :text => "2")
-      assigns[:untagged_images].should == [dog, egg]
+      response.should have_tag("span.untagged", :text => "2 images")
     end
   end
 end

@@ -11,6 +11,6 @@ class HomeController < ApplicationController
   protected
   
   def load_untagged_images
-    @untagged_images = Image.not_tagged
+    @untagged_images = Image.not_tagged.size
   end
 end
