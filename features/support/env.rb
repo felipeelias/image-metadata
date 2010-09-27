@@ -14,14 +14,14 @@ Spork.prefork do
   require 'capybara/rails'
   require 'capybara/cucumber'
   require 'capybara/session'
-  require 'cucumber/rails/capybara_javascript_emulation'
+  require 'capybara/envjs'
   
   require 'factory_girl'
   require 'spec/factories'
   
   Capybara.default_selector = :css
   
-  Capybara.javascript_driver = :culerity
+  Capybara.javascript_driver = :envjs
 
   ActionController::Base.allow_rescue = false
 
