@@ -6,4 +6,6 @@ $(function() {
       onblur: 'submit'
     });
   });
+  
+  $("#search").autocomplete({ source: "/tags", dataType: "json" });
 });
