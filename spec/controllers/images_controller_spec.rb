@@ -28,4 +28,21 @@ describe ImagesController do
       response.should be_redirect
     end
   end
+  
+  describe "filtering tagged/untagged images" do
+    before :each do
+      @tagged = Factory(:image)
+      @not_tagged = Factory(:image, :tag_list => nil)
+    end
+    
+    it "should filter tagged images" do
+      get :index, :filter => "tagged"
+      assigns[:images].should == [@tagged]
+    end
+
+    it "should filter untagged images" do
+      get :index, :filter => "untagged"
+      assigns[:images].should == [@not_tagged]
+    end
+  end
 end

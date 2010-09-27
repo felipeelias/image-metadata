@@ -2,6 +2,10 @@
   Search: <%= render "search" %>
 </div>
 
+<div>
+  <%= pluralize(@images.total_entries, "image") %> found
+</div>
+
 <% if @images.nil? %>
   Try searching for something above.
 <% elsif @images.empty? %>
