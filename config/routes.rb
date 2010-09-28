@@ -3,6 +3,8 @@ ActionController::Routing::Routes.draw do |map|
   map.home "/", :controller => "home"
   map.search "/search", :controller => "home", :action => "search"
   
+  map.set_locale '/locale/:locale', :controller => "home", :action => "set_locale"
+  
   map.resources :images
   # The priority is based upon order of creation: first created -> highest priority.
 

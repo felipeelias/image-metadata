@@ -7,6 +7,11 @@ class HomeController < ApplicationController
   def search
     @images = Image.tagged_with(params[:search]).paginate(:page => params[:page]) if !params[:search].blank?
   end
+  
+  def set_locale
+    session[:locale] = params[:locale]
+    redirect_to "/"
+  end
 
   protected
   

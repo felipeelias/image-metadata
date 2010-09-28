@@ -75,3 +75,8 @@ span.tags {
   margin: 5px 0;
   font-size: 75%;
 }
+
+.languages {
+  float:right;
+  font-size: 75%;
+}
