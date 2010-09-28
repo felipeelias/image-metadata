@@ -1,13 +1,11 @@
-<h1>Editing image</h1>
+<h1><%= t(:editing) %></h1>
 
 <% form_for @image do |f| %>
 
-<span>Image: <%= @image.image %></span>
+<p><img src="/images/icones/<%= @image.image %>"/> <small><%= @image.image %></small></p>
 
-<img src="/images/icones/<%= @image.image %>"/>
+<p>Tags: <%= f.text_field :tag_list %></p>
 
-<%= f.text_field :tag_list %>
-
-<%= f.submit %>
+<%= f.submit t(:save_changes) %> <%= t(:or) %> <%= link_to t(:cancel).titleize, images_path %>
 
 <% end %>

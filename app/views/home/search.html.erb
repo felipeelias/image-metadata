@@ -1,16 +1,16 @@
 <div id="sub_search">
-  Search: <%= render "search" %>
-</div>
-
-<div>
-  <%= pluralize(@images.total_entries, "image") %> found
+  <%= t(:search) %>: <%= render "search" %>
 </div>
 
 <% if @images.nil? %>
-  Try searching for something above.
+  <%= t(:try_search_again) %>
 <% elsif @images.empty? %>
-  Sorry, no itens found :( Try searching again.
+  <%= t(:no_itens_found) %>
 <% else %>
+  <div>
+    <%= t(:found_images, :count => @images.total_entries) %>
+  </div>
+
   <%= render :partial => "images/image", :collection => @images %>
 <% end %>
 

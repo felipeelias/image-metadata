@@ -1,3 +1,3 @@
 <div class="untagged_info">
-  <span class="untagged"><%= pluralize(@untagged_images, "images") %></span> with no tags. Help adding tags to the images <a href="<%= images_path %>">here</a>
+  <span class="untagged"><%= t(:image, :count => @untagged_images) %></span> <%= t(:no_tags_info) %> <a href="<%= images_path %>"><%= t(:here) %></a>
 </div>

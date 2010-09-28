@@ -1,7 +1,7 @@
-<h1>There are <%= pluralize(@images.total_entries, "image") %></h1>
-<small>Click on tag names to edit</small>
+<h1><%= t(:images_title, :count => @images.total_entries) %></h1>
+<small><%= t(:click_tag_names_info) %></small>
 
-<p>Filters: <%= link_to_filter "all" %> | <%= link_to_filter "untagged" %> | <%= link_to_filter "tagged" %></p>
+<p><%= t(:filters) %>: <%= link_to_filter "all" %> | <%= link_to_filter "untagged" %> | <%= link_to_filter "tagged" %></p>
 
 <%= render :partial => "image", :collection => @images %>
 
