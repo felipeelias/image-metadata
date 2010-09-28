@@ -2,10 +2,18 @@
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+  found_images: 
+    one: '1 image found'
+    other: '%{count} images found'
+  image:
+    one: '1 image'
+    other: '%{count} images'
   try_search_again: Try searching for something above.
   no_itens_found: "Sorry, no itens found :( Try searching again."
   search: Search
+  find: Find
   search_placeholder: "Type some tags and press enter"
+  here: here
   no_tags_info: "with no tags. Help adding tags to the images"
   search_page: "Back to search page"
   images_title:
@@ -13,3 +21,12 @@ en:
     other: "There are %{count} images"
   click_tag_names_info: "Click on tag names to edit"
   filters: Filters
+  all: all
+  untagged: "with no tags"
+  tagged: "With tags"
+  editing: "Editing"
+  save_changes: "Save changes"
+  cancel: cancel
+  or: or
+  previous: Previous
+  next: Next
