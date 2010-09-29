@@ -16,7 +16,7 @@ pt-BR:
   images_title:
     one: 'Exite 1 imagem'
     other: 'Existem %{count} imagens'
-  click_tag_names_info: "Clique nas tags para editá-las"
+  click_tag_names_info: "Clique nas tags para editá-las. Separe as tags por vírgula"
   filters: Filtros
   all: Todas
   untagged: "Sem tags"
