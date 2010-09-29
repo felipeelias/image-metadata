@@ -14,4 +14,8 @@ describe Tag do
   it "should find tags starting with a" do
     Tag.named_like("a").should == [@tag1, @tag2]
   end
+  
+  it "should return tags with no association" do
+    TagFinder.without_association.should == [@tag1, @tag2, @not_tag]
+  end
 end
