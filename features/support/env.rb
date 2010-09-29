@@ -25,6 +25,8 @@ Spork.prefork do
 
   ActionController::Base.allow_rescue = false
 
+  I18n.default_locale = :en
+
   Cucumber::Rails::World.use_transactional_fixtures = true
   
   if defined?(ActiveRecord::Base)
